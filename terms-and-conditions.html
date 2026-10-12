@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Terms and Conditions - Address Print Maker</title>
   <link rel="icon" type="image/png" href="app_icon_original.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,90 +21,110 @@
       --text-muted: #939597;
       --border: #E7E1DE;
       --gradient-primary: linear-gradient(135deg, #9B6658 0%, #5A413C 100%);
-      --shadow-sm: 0 4px 12px rgba(90, 65, 60, 0.05);
+      --shadow-sm: 0 4px 14px rgba(90, 65, 60, 0.06);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--background);
       color: var(--text-primary);
-      line-height: 1.7;
-      padding: 0;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
+    /* Top Sticky Navigation */
     header {
-      background: var(--surface);
+      background: rgba(255, 255, 255, 0.95);
       border-bottom: 1px solid var(--border);
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .nav-container {
-      max-width: 900px;
+      max-width: 860px;
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 12px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
       color: var(--primary-black);
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
+      min-width: 0;
     }
 
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
       border: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .brand span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .nav-links a {
       color: var(--secondary-terracotta);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-      transition: background 0.2s;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 50px;
+      background: rgba(155, 102, 88, 0.08);
+      border: 1px solid rgba(155, 102, 88, 0.15);
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
     }
 
     .nav-links a:hover {
-      background: rgba(155, 102, 88, 0.08);
+      background: var(--gradient-primary);
+      color: #FFFFFF;
+      border-color: transparent;
     }
 
+    /* Main Container */
     .main-wrapper {
       max-width: 860px;
-      margin: 40px auto 80px;
-      padding: 0 24px;
+      margin: 24px auto 100px;
+      padding: 0 16px;
+      padding-bottom: calc(40px + env(safe-area-inset-bottom, 20px));
     }
 
     .doc-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 48px;
+      border-radius: 22px;
+      padding: 36px 30px;
       box-shadow: var(--shadow-sm);
     }
 
     .doc-header {
       border-bottom: 1px solid var(--border);
-      padding-bottom: 24px;
-      margin-bottom: 32px;
+      padding-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .badge {
       display: inline-block;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -112,84 +132,112 @@
       background-color: rgba(155, 102, 88, 0.1);
       padding: 5px 12px;
       border-radius: 50px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 1.85rem;
       font-weight: 800;
       color: var(--primary-black);
       letter-spacing: -0.02em;
+      line-height: 1.25;
       margin-bottom: 8px;
     }
 
     .meta {
-      font-size: 0.88rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
+      line-height: 1.5;
     }
 
     h2 {
-      font-size: 1.3rem;
+      font-size: 1.18rem;
       font-weight: 700;
       color: var(--primary-black);
-      margin-top: 36px;
-      margin-bottom: 16px;
+      margin-top: 28px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
       gap: 8px;
+      line-height: 1.35;
     }
 
     h2::before {
       content: '';
       display: inline-block;
       width: 4px;
-      height: 18px;
+      height: 16px;
       background: var(--secondary-terracotta);
       border-radius: 2px;
+      flex-shrink: 0;
     }
 
     p {
       color: var(--text-secondary);
-      margin-bottom: 14px;
-      font-size: 0.98rem;
+      margin-bottom: 12px;
+      font-size: 0.94rem;
+      word-break: break-word;
     }
 
     ul {
-      margin-left: 20px;
-      margin-bottom: 20px;
+      margin-left: 18px;
+      margin-bottom: 16px;
       color: var(--text-secondary);
     }
 
-    li { margin-bottom: 10px; }
-    li strong { color: var(--primary-black); }
+    li {
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+    }
+
+    li strong {
+      color: var(--primary-black);
+    }
 
     .highlight-box {
       background: #FAF9F8;
       border-left: 3px solid var(--secondary-terracotta);
-      padding: 18px 20px;
-      border-radius: 0 12px 12px 0;
-      margin: 20px 0;
+      padding: 14px 16px;
+      border-radius: 0 10px 10px 0;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
     }
 
     .footer {
       text-align: center;
-      margin-top: 50px;
-      padding-top: 24px;
+      margin-top: 40px;
+      padding-top: 20px;
       border-top: 1px solid var(--border);
       color: var(--text-muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
     }
 
     a.external-link {
       color: var(--secondary-terracotta);
       text-decoration: none;
       font-weight: 600;
+      word-break: break-all;
     }
-    a.external-link:hover { text-decoration: underline; }
 
-    @media (max-width: 600px) {
-      .doc-card { padding: 28px 20px; border-radius: 16px; }
-      h1 { font-size: 1.7rem; }
+    a.external-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Small Mobile Phones */
+    @media (max-width: 480px) {
+      .nav-container { padding: 10px 14px; }
+      .brand img { width: 30px; height: 30px; }
+      .brand span { font-size: 0.92rem; }
+      .nav-links a { font-size: 0.76rem; padding: 6px 11px; }
+
+      .main-wrapper { margin-top: 14px; padding: 0 10px; }
+      .doc-card { padding: 22px 16px; border-radius: 16px; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.08rem; margin-top: 24px; }
+      p, li { font-size: 0.88rem; line-height: 1.6; }
     }
   </style>
 </head>
@@ -202,7 +250,7 @@
         <span>Address Print Maker</span>
       </a>
       <div class="nav-links">
-        <a href="privacy-policy.html">Privacy Policy →</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
       </div>
     </div>
   </header>
